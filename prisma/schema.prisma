@@ -37,23 +37,20 @@ model Product {
   color        String?
   stock        Int?
   createdAt    DateTime  @default(now())
-  quantity     Quantity  @default(PCS)
+  quantity     Quantity[]  
   location     Location  @default(SALEABLE)
   createdBy    User?     @relation(fields: [createdById], references: [id])
   createdById  String?   @db.ObjectId
 }
 
 
-enum Quantity {
-  PCS
-  DOZEN
-  BOX
-  UNIT
+model Location {
+    id           String    @id @default(auto()) @map("_id") @db.ObjectId
+    name         String    @default('Saleable')
 }
-enum Location {
-  SALEABLE
-  ANALYSIS
-  RETURN
+model Quantity {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  name         String  @default('pcs')
 }
 
 

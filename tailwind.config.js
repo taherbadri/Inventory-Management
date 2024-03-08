@@ -57,6 +57,15 @@ module.exports = {
 					"base-100": "#ffffff",
 				},
 			},
+			{
+				blueLavender: {
+					primary: "#b0b5e8",
+					secondary: "#99d8d0",
+					accent: "#ffb347",
+					neutral: "#4a4e69",
+					"base-100": "#ffffff",
+				},
+			},
 		],
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],
